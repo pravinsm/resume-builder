@@ -20,6 +20,23 @@ code {
   opacity: 1;
 }
 
+/* App.js */
+.logo_Wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.speedDial {
+  position: absolute;
+  top: -29px;
+  right: 15px;
+}
+
+.speedDial > button {
+  width: 50px;
+  height: 50px;
+}
+
 /* Menu.js wrapper for media query */
 .tool_Wrapper {
   width: 100%;
@@ -34,8 +51,13 @@ code {
 }
 
 @media only screen and (max-width: 1260px) {
-  .tool_Wrapper {
+  .tool_Wrapper,
+  .logo_Wrapper {
     width: 1260px;
+  }
+  .speedDial {
+    top: -33px;
+    right: 9px;
   }
 }
 
