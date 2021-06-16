@@ -388,6 +388,7 @@ function Template1() {
               height: `calc(${L}*1.2)`,
             }}
             placeholder="YOUR NAME"
+            value={data.yourName}
             id="yourName"
             className={classes.Template1_Input}
             onChange={updateInputField}
@@ -401,6 +402,7 @@ function Template1() {
               display: `${data.sections.profession ? "block" : "none"}`,
             }}
             placeholder="YOUR PROFESSION OR SPECIALITY"
+            value={data.yourProfession}
             id="yourProfession"
             className={classes.Template1_Input}
             onChange={updateInputField}
@@ -484,6 +486,7 @@ function Template1() {
                       height: `calc(${S}*1.2)`,
                     }}
                     placeholder={y.des}
+                    value={data[y.desid]}
                     id={y.desid}
                     className={classes.Template1_Input}
                     onChange={updateInputField}
@@ -530,6 +533,7 @@ function Template1() {
                     height: `calc(${S}*1.2)`,
                   }}
                   placeholder={x.placeholder}
+                  value={data[x.id]}
                   id={x.id}
                   className={classes.Template1_Input}
                   onChange={updateInputField}
@@ -579,6 +583,7 @@ function Template1() {
                       }}
                       placeholder="Position"
                       id="positionDes"
+                      value={x.positionDes}
                       className={classes.Template1_Input}
                       onChange={(e) => updateInputFieldEXP(e, i)}
                       onInput={(e) => textAreaAutoGrow(e, M)}
@@ -643,6 +648,7 @@ function Template1() {
                       }}
                       placeholder="In this field you can describe about your duties,responsibilities,etc."
                       id="detailedDes"
+                      value={x.detailedDes}
                       className={classes.Template1_Input}
                       onChange={(e) => updateInputFieldEXP(e, i)}
                       onInput={(e) => textAreaAutoGrow(e, S)}
@@ -726,6 +732,7 @@ function Template1() {
                       }}
                       placeholder="Degree"
                       id="degreeDes"
+                      value={x.degreeDes}
                       className={classes.Template1_Input}
                       onChange={(e) => updateInputFieldEDU(e, i)}
                       onInput={(e) => textAreaAutoGrow(e, M)}
@@ -834,6 +841,7 @@ function Template1() {
                 }}
                 placeholder="CUSTOM TITLE"
                 id={x.titleId}
+                value={data[x.titleId]}
                 className={classes.Template1_Input}
                 onChange={updateInputField}
                 onInput={(e) => textAreaAutoGrow(e, M)}
@@ -913,6 +921,7 @@ function Template1() {
               }}
               placeholder="CUSTOM TITLE"
               id="circularTitle"
+              value={data.circularTitle}
               className={classes.Template1_Input}
               onChange={updateInputField}
               onInput={(e) => textAreaAutoGrow(e, M)}
@@ -1018,6 +1027,7 @@ function Template1() {
               }}
               placeholder="CUSTOM TITLE"
               id="starTitle"
+              value={data.starTitle}
               className={classes.Template1_Input}
               onChange={updateInputField}
               onInput={(e) => textAreaAutoGrow(e, M)}
@@ -1135,6 +1145,7 @@ function Template1() {
                   }}
                   placeholder="CUSTOM TITLE"
                   id={x.titleID}
+                  value={data[x.titleID]}
                   className={classes.Template1_Input}
                   onChange={updateInputField}
                   onInput={(e) => textAreaAutoGrow(e, M)}

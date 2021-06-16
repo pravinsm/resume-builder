@@ -124,7 +124,7 @@ const sectionGroup2 = [
   { title: "ADDITIONAL INFO", child: ["LIST 1", "LIST 2"] },
 ];
 
-function Menu() {
+function Menu(props) {
   const classes = useStyles();
   const { data, setData } = useContext(ContextGlobal);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -448,15 +448,24 @@ function Menu() {
             <h6 className={classes.tool_OptionText}>SECTIONS</h6>
           </div>
           <div className={classes.tool_Option}>
-            <Save className={classes.tool_OptionSections} />
+            <Save
+              className={classes.tool_OptionSections}
+              onClick={props.save}
+            />
             <h6 className={classes.tool_OptionText}>SAVE</h6>
           </div>
           <div className={classes.tool_Option}>
-            <FolderOpen className={classes.tool_OptionSections} />
+            <FolderOpen
+              className={classes.tool_OptionSections}
+              onClick={props.load}
+            />
             <h6 className={classes.tool_OptionText}>LOAD</h6>
           </div>
           <div className={classes.tool_Option}>
-            <PictureAsPdf className={classes.tool_OptionSections} />
+            <PictureAsPdf
+              className={classes.tool_OptionSections}
+              onClick={props.print}
+            />
             <h6 className={classes.tool_OptionText}>DOWNLOAD PDF</h6>
           </div>
         </div>
