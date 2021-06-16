@@ -1,13 +1,101 @@
+* {
+  outline: none;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+::placeholder {
+  color: grey;
+  opacity: 1;
+}
+
+/* Menu.js wrapper for media query */
+.tool_Wrapper {
+  width: 100%;
+  z-index: 100;
+  position: sticky;
+  text-align: center;
+  top: 40px;
+}
+
+.MuiFormControlLabel-root > .MuiFormControlLabel-label {
+  font-size: 0.75rem !important;
+}
+
+@media only screen and (max-width: 1260px) {
+  .tool_Wrapper {
+    width: 1260px;
+  }
+}
+
+/* Template.js */
+.MuiTimeline-root {
+  padding: 5px !important;
+  margin: 5px 0px !important;
+  border: 2px dashed transparent;
+  position: relative !important;
+}
+.MuiTimelineContent-root {
+  padding: 2px 2px 0 10px !important;
+}
+.MuiTimelineItem-missingOppositeContent::before {
+  content: none !important;
+}
+
+.MuiTimeline-root:hover {
+  border: 2px dashed rgba(0, 0, 0, 0.4) !important;
+}
+
+.MuiTimeline-root:hover .expAddIcon {
+  display: block !important;
+  cursor: pointer;
+}
+
+.MuiTimeline-root:hover .expRemoveIcon {
+  display: block !important;
+  cursor: pointer;
+}
+
+.expAddIcon {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+}
+
+.expRemoveIcon {
+  position: absolute;
+  top: -18px;
+  right: 18px;
+}
+
+.listAddIcon {
+  font-size: 30px !important;
+  position: absolute;
+  top: -14px;
+  right: -14px;
+}
+
+.listRemoveIcon {
+  font-size: 30px !important;
+  position: absolute;
+  top: -14px;
+  right: 14px;
+}
+
+[contenteditable="true"]:empty::before {
+  content: attr(placeholder);
+  display: block;
+  color: grey;
+  box-sizing: border-box;
 }
