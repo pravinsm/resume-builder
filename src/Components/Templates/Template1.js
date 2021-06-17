@@ -932,7 +932,7 @@ function Template1() {
                   className={classes.simpleList}
                   style={{
                     padding: "10px 0 10px 5px",
-                    width: "32.147%",
+                    width: "32%",
                     // flexGrow: "1",
                     display: "flex",
                     placeItems: "center",
