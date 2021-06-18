@@ -180,7 +180,7 @@ function App() {
                 enqueueSnackbar("Successfully Loaded!", {
                   variant: "success",
                   anchorOrigin: {
-                    vertical: "top",
+                    vertical: "bottom",
                     horizontal: "center",
                   },
                 });
@@ -192,7 +192,7 @@ function App() {
               enqueueSnackbar("Load the proper text file!", {
                 variant: "error",
                 anchorOrigin: {
-                  vertical: "top",
+                  vertical: "bottom",
                   horizontal: "center",
                 },
               });
