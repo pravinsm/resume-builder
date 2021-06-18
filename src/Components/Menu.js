@@ -1,4 +1,4 @@
-import React, { useState, useContext, useRef } from "react";
+import React, { useState, useContext, useRef, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Select from "react-select";
 import { ContextGlobal } from "../context";
@@ -18,6 +18,7 @@ import {
   FormLabel,
   Switch,
 } from "@material-ui/core";
+import { useSnackbar } from "notistack";
 
 const useStyles = makeStyles(() => ({
   tool_Conatiner: {
@@ -127,6 +128,7 @@ const sectionGroup2 = [
 function Menu(props) {
   const classes = useStyles();
   const { data, setData } = useContext(ContextGlobal);
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   const [anchorEl, setAnchorEl] = useState(null);
   const [anchorEl1, setAnchorEl1] = useState(null);
   const [overlay, setOverlay] = useState("none");
@@ -159,6 +161,21 @@ function Menu(props) {
       },
     }));
   };
+
+  useEffect(() => {
+    enqueueSnackbar(
+      'Click "Section" and customize your "Resume" for adding skills, additional info, etc',
+      {
+        variant: "info",
+        autoHideDuration: 7000,
+        anchorOrigin: {
+          vertical: "bottom",
+          horizontal: "center",
+        },
+      }
+    );
+    return () => {};
+  }, []);
 
   return (
     <>

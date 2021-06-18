@@ -4,11 +4,14 @@ import "./index.css";
 import "./font.css";
 import App from "./App";
 import ContextProvider from "./context";
+import { SnackbarProvider } from "notistack";
 
 ReactDOM.render(
   <React.StrictMode>
     <ContextProvider>
-      <App />
+      <SnackbarProvider>
+        <App />
+      </SnackbarProvider>
     </ContextProvider>
   </React.StrictMode>,
   document.getElementById("root")

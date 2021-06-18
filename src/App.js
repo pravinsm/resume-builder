@@ -10,6 +10,7 @@ import { jsPDF } from "../node_modules/jspdf/dist/jspdf.es";
 import FileSaver from "file-saver";
 import { GitHub, LinkedIn, Mail, Person } from "@material-ui/icons";
 import { SpeedDial, SpeedDialAction } from "@material-ui/lab";
+import { useSnackbar } from "notistack";
 
 const useStyles = makeStyles(() => ({
   ContentWrapper: {
@@ -44,6 +45,7 @@ function App() {
   const loadRef = useRef(null);
 
   const [open, setOpen] = useState(false);
+  const { enqueueSnackbar } = useSnackbar();
 
   const theme = createMuiTheme({
     palette: {
@@ -63,6 +65,7 @@ function App() {
     document.body.style.backgroundColor =
       data.bgcolor === "#000000" ? "#cecece" : data.bgcolor;
     fontRef.current.style.fontFamily = data.font;
+
     return () => {};
   }, [data]);
 
@@ -174,11 +177,25 @@ function App() {
                 const values = { ...data };
                 Object.assign(values, result);
                 setData(values);
+                enqueueSnackbar("Successfully Loaded!", {
+                  variant: "success",
+                  anchorOrigin: {
+                    vertical: "bottom",
+                    horizontal: "center",
+                  },
+                });
               };
 
               fr.readAsText(e.target.files[0]);
             } else {
-              alert("Load the proper text file!");
+              // alert("Load the proper text file!");
+              enqueueSnackbar("Load the proper text file!", {
+                variant: "error",
+                anchorOrigin: {
+                  vertical: "bottom",
+                  horizontal: "center",
+                },
+              });
             }
           }}
         />
