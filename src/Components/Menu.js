@@ -164,13 +164,13 @@ function Menu(props) {
 
   useEffect(() => {
     enqueueSnackbar(
-      'Click "Section" and customize your "Resume" for adding skills, additional info, etc',
+      'Click "Section" and customize your "Resume" \n for adding skills, additional info, etc',
       {
         variant: "info",
-        autoHideDuration: 7000,
+        autoHideDuration: 5000,
         anchorOrigin: {
-          vertical: "bottom",
-          horizontal: "center",
+          vertical: "top",
+          horizontal: "left",
         },
       }
     );
