@@ -588,58 +588,62 @@ function Template1() {
                       onChange={(e) => updateInputFieldEXP(e, i)}
                       onInput={(e) => textAreaAutoGrow(e, M)}
                     />
-                    <div
+                    {/* <div
                       style={{
                         display: "flex",
                         justifyContent: "space-between",
                       }}
+                    > */}
+                    <p
+                      suppressContentEditableWarning
+                      placeholder="Organization"
+                      contentEditable="true"
+                      className={classes.Template1_Input_editable}
+                      style={{
+                        fontSize: S,
+                        fontWeight: "600",
+                        float: "left",
+                        textTransform: "uppercase",
+                        whiteSpace: "break-spaces",
+                      }}
+                      id="organization"
+                      onBlur={(e) => {
+                        const values = [...data.experienceDes];
+                        var id = e.target.id;
+                        values[i][id] = e.target.innerText;
+                        setData((prevState) => ({
+                          ...prevState,
+                          experienceDes: values,
+                        }));
+                      }}
                     >
-                      <p
-                        suppressContentEditableWarning
-                        placeholder="Organization"
-                        contentEditable="true"
-                        className={classes.Template1_Input_editable}
-                        style={{
-                          fontSize: S,
-                          fontWeight: "600",
-                          textTransform: "uppercase",
-                        }}
-                        id="organization"
-                        onBlur={(e) => {
-                          const values = [...data.experienceDes];
-                          var id = e.target.id;
-                          values[i][id] = e.target.innerText;
-                          setData((prevState) => ({
-                            ...prevState,
-                            experienceDes: values,
-                          }));
-                        }}
-                      >
-                        {x.organization}
-                      </p>
-                      <p
-                        suppressContentEditableWarning
-                        placeholder="From - Until"
-                        contentEditable="true"
-                        className={classes.Template1_Input_editable}
-                        style={{
-                          fontSize: S,
-                          direction: "rtl",
-                        }}
-                        id="duration"
-                        onBlur={(e) => {
-                          const values = [...data.experienceDes];
-                          var id = e.target.id;
-                          values[i][id] = e.target.innerText;
-                          setData((prevState) => ({
-                            ...prevState,
-                            experienceDes: values,
-                          }));
-                        }}
-                      >
-                        {x.duration}
-                      </p>
-                    </div>
+                      {x.organization}
+                    </p>
+                    <p
+                      suppressContentEditableWarning
+                      placeholder="From - Until"
+                      contentEditable="true"
+                      className={classes.Template1_Input_editable}
+                      style={{
+                        fontSize: S,
+                        direction: "rtl",
+                        float: "right",
+                        whiteSpace: "break-spaces",
+                      }}
+                      id="duration"
+                      onBlur={(e) => {
+                        const values = [...data.experienceDes];
+                        var id = e.target.id;
+                        values[i][id] = e.target.innerText;
+                        setData((prevState) => ({
+                          ...prevState,
+                          experienceDes: values,
+                        }));
+                      }}
+                    >
+                      {x.duration}
+                    </p>
+                    {/* </div> */}
                     <textarea
                       style={{
                         fontSize: S,
@@ -737,58 +741,62 @@ function Template1() {
                       onChange={(e) => updateInputFieldEDU(e, i)}
                       onInput={(e) => textAreaAutoGrow(e, M)}
                     />
-                    <div
+                    {/* <div
                       style={{
                         display: "flex",
                         justifyContent: "space-between",
                       }}
+                    > */}
+                    <p
+                      suppressContentEditableWarning
+                      placeholder="SCHOOL"
+                      contentEditable="true"
+                      className={classes.Template1_Input_editable}
+                      style={{
+                        fontSize: S,
+                        fontWeight: "600",
+                        textTransform: "uppercase",
+                        float: "left",
+                        whiteSpace: "break-spaces",
+                      }}
+                      id="school"
+                      onBlur={(e) => {
+                        const values = [...data.educationDes];
+                        var id = e.target.id;
+                        values[i][id] = e.target.innerText;
+                        setData((prevState) => ({
+                          ...prevState,
+                          educationDes: values,
+                        }));
+                      }}
                     >
-                      <p
-                        suppressContentEditableWarning
-                        placeholder="SCHOOL"
-                        contentEditable="true"
-                        className={classes.Template1_Input_editable}
-                        style={{
-                          fontSize: S,
-                          fontWeight: "600",
-                          textTransform: "uppercase",
-                        }}
-                        id="school"
-                        onBlur={(e) => {
-                          const values = [...data.educationDes];
-                          var id = e.target.id;
-                          values[i][id] = e.target.innerText;
-                          setData((prevState) => ({
-                            ...prevState,
-                            educationDes: values,
-                          }));
-                        }}
-                      >
-                        {x.school}
-                      </p>
-                      <p
-                        suppressContentEditableWarning
-                        placeholder="From - Until"
-                        contentEditable="true"
-                        className={classes.Template1_Input_editable}
-                        style={{
-                          fontSize: S,
-                          direction: "rtl",
-                        }}
-                        id="eduduration"
-                        onBlur={(e) => {
-                          const values = [...data.educationDes];
-                          var id = e.target.id;
-                          values[i][id] = e.target.innerText;
-                          setData((prevState) => ({
-                            ...prevState,
-                            educationDes: values,
-                          }));
-                        }}
-                      >
-                        {x.eduduration}
-                      </p>
-                    </div>
+                      {x.school}
+                    </p>
+                    <p
+                      suppressContentEditableWarning
+                      placeholder="From - Until"
+                      contentEditable="true"
+                      className={classes.Template1_Input_editable}
+                      style={{
+                        fontSize: S,
+                        direction: "rtl",
+                        float: "right",
+                        whiteSpace: "break-spaces",
+                      }}
+                      id="eduduration"
+                      onBlur={(e) => {
+                        const values = [...data.educationDes];
+                        var id = e.target.id;
+                        values[i][id] = e.target.innerText;
+                        setData((prevState) => ({
+                          ...prevState,
+                          educationDes: values,
+                        }));
+                      }}
+                    >
+                      {x.eduduration}
+                    </p>
+                    {/* </div> */}
                   </TimelineContent>
                 </TimelineItem>
               ))}
