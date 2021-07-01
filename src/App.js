@@ -71,7 +71,7 @@ function App() {
 
   const printDocument = () => {
     const input = document.getElementById("divToOfferInfo");
-    const pdf = new jsPDF("p", "mm", [317.5, 449.79166667]);
+    const pdf = new jsPDF("p", "mm", [317.5, 480]);
     if (pdf) {
       domtoimage.toPng(input).then((imgData) => {
         pdf.addImage(imgData, "PNG", 0, 0);
