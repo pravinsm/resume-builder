@@ -6,6 +6,7 @@ import {
   CheckCircle,
   Email,
   Facebook,
+  FormatAlignJustify,
   GitHub,
   Instagram,
   Language,
@@ -476,6 +477,10 @@ function Template1() {
                       fontSize: S,
                       fontWeight: "400",
                       marginTop: "5px",
+                      whiteSpace: "normal",
+                      textAlign: `${
+                        y.desid === "aboutDes" ? "justify" : "inherit"
+                      }`,
                       display: `${
                         y.sectionid === ""
                           ? ""
